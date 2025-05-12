@@ -45,6 +45,29 @@ public class App {
         return sb.toString().trim();
     }
 
+    public static int countWordOccurrences(String sentence, String word){
+        if (sentence == null || word == null || sentence.isEmpty() || word.isEmpty()) {
+            return 0;
+        }
+
+        // Step 1: Normalize both to lowercase (case-insensitive)
+        String normalizedSentence = sentence.toLowerCase();
+        String normalizedWord = word.toLowerCase();
+
+        // Step 2: Split sentence into words
+        String[] words = normalizedSentence.split(" ");
+
+        // Step 3: Count exact matches
+        int count = 0;
+        for (String w : words) {
+            if (w.equals(normalizedWord)) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
 
 
 
@@ -58,5 +81,9 @@ public class App {
         System.out.println(replaceVowelsWithAstrix("I am damn cool!"));
 
         System.out.println(capitalizeWords("java is fUn"));
+
+        String sentence = "Java is fun and java is powerful";
+        String word = "java";
+        System.out.println(countWordOccurrences(sentence, word));
     }
 }
