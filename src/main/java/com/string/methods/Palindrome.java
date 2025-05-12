@@ -9,8 +9,4 @@ public class Palindrome {
         return (lowerInput.equals(reverse));
     }
 
-    public static void main(String[] args) {
-        System.out.println("racecar is palindrome? " + isPalindrome("racecar"));
-        System.out.println("mom is palindrome? " + isPalindrome("moM"));
-    }
 }
